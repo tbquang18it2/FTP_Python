@@ -22,163 +22,157 @@ class Ui_MainWindow(object):
 		self.Password_User = None
 	def setupUi(self, MainWindow):
 		MainWindow.setObjectName("MainWindow")
-		MainWindow.resize(600, 600)
+		MainWindow.resize(600, 594)
 		self.centralwidget = QtWidgets.QWidget(MainWindow)
 		self.centralwidget.setObjectName("centralwidget")
 
-		#Màn hình hiển thị kết quả
-		self.areadisplay = QtWidgets.QTextEdit(self.centralwidget)
-		self.areadisplay.setGeometry(QtCore.QRect(39, 60, 541, 221))
-		self.areadisplay.setObjectName("areadisplay")
-		#ô nhập tên folder mới
-		self.edtcreatefoldel = QtWidgets.QTextEdit(self.centralwidget)
-		self.edtcreatefoldel.setGeometry(QtCore.QRect(140, 330, 121, 31))
-		self.edtcreatefoldel.setObjectName("edtcreatefoldel")
-		#nút tạo folder mới
-		self.btncreatefolder = QtWidgets.QPushButton(self.centralwidget)
-		self.btncreatefolder.setGeometry(QtCore.QRect(270, 330, 61, 31))
-		self.btncreatefolder.setObjectName("btncreatefolder")
-		self.btncreatefolder.clicked.connect(self.addfolder)
-		#self.btncreatefolder.clicked.connect(self.createFolder)
-		#label
-		self.label = QtWidgets.QLabel(self.centralwidget)
-		self.label.setGeometry(QtCore.QRect(40, 330, 111, 31))
-		self.label.setObjectName("label")
-		#nút kết nối server
-		self.btninfoserver = QtWidgets.QPushButton(self.centralwidget)
-		self.btninfoserver.setGeometry(QtCore.QRect(50, 290, 111, 31))
+		self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
+		self.groupBox.setGeometry(QtCore.QRect(380, 80, 191, 101))
+		self.groupBox.setObjectName("groupBox")
+		self.btninfoserver = QtWidgets.QPushButton(self.groupBox)
+		self.btninfoserver.setGeometry(QtCore.QRect(10, 20, 81, 31))
 		self.btninfoserver.setObjectName("btninfoserver")
-		#label
-		self.label_2 = QtWidgets.QLabel(self.centralwidget)
-		self.label_2.setGeometry(QtCore.QRect(40, 20, 21, 16))
-		self.label_2.setObjectName("label_2")
-		#ô nhập ip
-		self.ip = QtWidgets.QTextEdit(self.centralwidget)
-		self.ip.setGeometry(QtCore.QRect(60, 10, 121, 31))
-		self.ip.setObjectName("ip")
-		#label
-		self.label_3 = QtWidgets.QLabel(self.centralwidget)
-		self.label_3.setGeometry(QtCore.QRect(190, 20, 47, 13))
-		self.label_3.setObjectName("label_3")
-		#ô nhập tên
-		self.name = QtWidgets.QTextEdit(self.centralwidget)
-		self.name.setGeometry(QtCore.QRect(240, 10, 141, 31))
-		self.name.setObjectName("name")
-		#label
-		self.label_4 = QtWidgets.QLabel(self.centralwidget)
-		self.label_4.setGeometry(QtCore.QRect(390, 20, 41, 16))
-		self.label_4.setObjectName("label_4")
-		#ô nhập pass
-		self.password = QtWidgets.QTextEdit(self.centralwidget)
-		self.password.setGeometry(QtCore.QRect(433, 10, 121, 31))
-		self.password.setObjectName("password")
-		#label
-		self.label_5 = QtWidgets.QLabel(self.centralwidget)
-		self.label_5.setGeometry(QtCore.QRect(40, 380, 111, 16))
-		self.label_5.setObjectName("label_5")
-		#ô nhập tên folder cần chuyển đến
-		self.edtmovetofolder = QtWidgets.QTextEdit(self.centralwidget)
-		self.edtmovetofolder.setGeometry(QtCore.QRect(140, 370, 121, 31))
-		self.edtmovetofolder.setObjectName("edtmovetofolder")
-		#nút chuyển folder
-		self.btnmovetofolder = QtWidgets.QPushButton(self.centralwidget)
-		self.btnmovetofolder.setGeometry(QtCore.QRect(270, 370, 61, 31))
-		self.btnmovetofolder.setObjectName("btnmovetofolder")
-		self.btnmovetofolder.clicked.connect(self.movetofolder)
-		#thông tin folder hiện tại
-		self.btninforfolder = QtWidgets.QPushButton(self.centralwidget)
-		self.btninforfolder.setGeometry(QtCore.QRect(180, 290, 111, 31))
-		self.btninforfolder.setObjectName("btninforfolder") 
-		self.btninforfolder.clicked.connect(self.inforfolder)       
-		#nút chuyển về folder trước đó
-		self.btnreturnfolder = QtWidgets.QPushButton(self.centralwidget)
-		self.btnreturnfolder.setGeometry(QtCore.QRect(440, 290, 111, 31))
+		self.btnquit = QtWidgets.QPushButton(self.groupBox)
+		self.btnquit.setGeometry(QtCore.QRect(40, 60, 111, 31))
+		self.btnquit.setObjectName("btnquit")
+		self.btnquit.clicked.connect(self.defquit)
+		self.btnreturnfolder = QtWidgets.QPushButton(self.groupBox)
+		self.btnreturnfolder.setGeometry(QtCore.QRect(90, 20, 81, 31))
 		self.btnreturnfolder.setObjectName("btnreturnfolder")
 		self.btnreturnfolder.clicked.connect(self.returnfolder)
-		#label
-		self.label_6 = QtWidgets.QLabel(self.centralwidget)
-		self.label_6.setGeometry(QtCore.QRect(340, 330, 111, 31))
+
+
+		self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
+		self.groupBox_2.setGeometry(QtCore.QRect(40, -1, 531, 71))
+		self.groupBox_2.setObjectName("groupBox_2")
+		self.label_2 = QtWidgets.QLabel(self.groupBox_2)
+		self.label_2.setGeometry(QtCore.QRect(10, 25, 21, 16))
+		self.label_2.setObjectName("label_2")
+		self.ip = QtWidgets.QTextEdit(self.groupBox_2)
+		self.ip.setGeometry(QtCore.QRect(30, 20, 121, 31))
+		self.ip.setObjectName("ip")
+		self.label_3 = QtWidgets.QLabel(self.groupBox_2)
+		self.label_3.setGeometry(QtCore.QRect(160, 25, 47, 13))
+		self.label_3.setObjectName("label_3")
+		self.name = QtWidgets.QTextEdit(self.groupBox_2)
+		self.name.setGeometry(QtCore.QRect(200, 20, 141, 31))
+		self.name.setObjectName("name")
+		self.label_4 = QtWidgets.QLabel(self.groupBox_2)
+		self.label_4.setGeometry(QtCore.QRect(350, 25, 41, 16))
+		self.label_4.setObjectName("label_4")
+		self.password = QtWidgets.QTextEdit(self.groupBox_2)
+		self.password.setGeometry(QtCore.QRect(380, 20, 121, 31))
+		self.password.setObjectName("password")
+
+		self.groupBox_3 = QtWidgets.QGroupBox(self.centralwidget)
+		self.groupBox_3.setGeometry(QtCore.QRect(40, 80, 331, 221))
+		self.groupBox_3.setObjectName("groupBox_3")
+		self.areadisplay = QtWidgets.QTextEdit(self.groupBox_3)
+		self.areadisplay.setGeometry(QtCore.QRect(10, 20, 311, 191))
+		self.areadisplay.setObjectName("areadisplay")
+
+		self.groupBox_4 = QtWidgets.QGroupBox(self.centralwidget)
+		self.groupBox_4.setGeometry(QtCore.QRect(40, 310, 271, 161))
+		self.groupBox_4.setObjectName("groupBox_4")
+		self.label = QtWidgets.QLabel(self.groupBox_4)
+		self.label.setGeometry(QtCore.QRect(10, 20, 111, 31))
+		self.label.setObjectName("label")
+		self.edtcreatefoldel = QtWidgets.QTextEdit(self.groupBox_4)
+		self.edtcreatefoldel.setGeometry(QtCore.QRect(70, 20, 121, 31))
+		self.edtcreatefoldel.setContextMenuPolicy(QtCore.Qt.PreventContextMenu)
+		self.edtcreatefoldel.setObjectName("edtcreatefoldel")
+		self.btncreatefolder = QtWidgets.QPushButton(self.groupBox_4)
+		self.btncreatefolder.setGeometry(QtCore.QRect(200, 20, 61, 31))
+		self.btncreatefolder.setObjectName("btncreatefolder")
+		self.btncreatefolder.clicked.connect(self.addfolder)
+		self.label_5 = QtWidgets.QLabel(self.groupBox_4)
+		self.label_5.setGeometry(QtCore.QRect(10, 76, 111, 16))
+		self.label_5.setObjectName("label_5")
+		self.edtmovetofolder = QtWidgets.QTextEdit(self.groupBox_4)
+		self.edtmovetofolder.setGeometry(QtCore.QRect(70, 70, 121, 31))
+		self.edtmovetofolder.setObjectName("edtmovetofolder")
+		self.btnmovetofolder = QtWidgets.QPushButton(self.groupBox_4)
+		self.btnmovetofolder.setGeometry(QtCore.QRect(200, 70, 61, 31))
+		self.btnmovetofolder.setObjectName("btnmovetofolder")
+		self.btnmovetofolder.clicked.connect(self.movetofolder)
+		self.label_6 = QtWidgets.QLabel(self.groupBox_4)
+		self.label_6.setGeometry(QtCore.QRect(10, 120, 111, 31))
 		self.label_6.setObjectName("label_6")
-		#ô nhaajpp folder cần xóa
-		self.edtdeletefolder = QtWidgets.QTextEdit(self.centralwidget)
-		self.edtdeletefolder.setGeometry(QtCore.QRect(390, 330, 121, 31))
+		self.edtdeletefolder = QtWidgets.QTextEdit(self.groupBox_4)
+		self.edtdeletefolder.setGeometry(QtCore.QRect(70, 120, 121, 31))
 		self.edtdeletefolder.setObjectName("edtdeletefolder")
-		# nút xóa folder
-		self.btndeletefolder = QtWidgets.QPushButton(self.centralwidget)
-		self.btndeletefolder.setGeometry(QtCore.QRect(520, 330, 71, 31))
+		self.btndeletefolder = QtWidgets.QPushButton(self.groupBox_4)
+		self.btndeletefolder.setGeometry(QtCore.QRect(200, 120, 61, 31))
 		self.btndeletefolder.setObjectName("btndeletefolder")
 		self.btndeletefolder.clicked.connect(self.deletefolder)
-		#label
-		self.label_7 = QtWidgets.QLabel(self.centralwidget)
-		self.label_7.setGeometry(QtCore.QRect(340, 380, 101, 16))
+		
+		self.groupBox_5 = QtWidgets.QGroupBox(self.centralwidget)
+		self.groupBox_5.setGeometry(QtCore.QRect(320, 310, 251, 61))
+		self.groupBox_5.setObjectName("groupBox_5")
+		self.label_7 = QtWidgets.QLabel(self.groupBox_5)
+		self.label_7.setGeometry(QtCore.QRect(10, 24, 101, 16))
 		self.label_7.setObjectName("label_7")
-		#nút ô nhập tên file cần xóa
-		self.edtdeletefile = QtWidgets.QTextEdit(self.centralwidget)
-		self.edtdeletefile.setGeometry(QtCore.QRect(390, 370, 121, 31))
+		self.edtdeletefile = QtWidgets.QTextEdit(self.groupBox_5)
+		self.edtdeletefile.setGeometry(QtCore.QRect(50, 20, 121, 31))
 		self.edtdeletefile.setObjectName("edtdeletefile")
-
-		#label
-		self.label_8 = QtWidgets.QLabel(self.centralwidget)
-		self.label_8.setGeometry(QtCore.QRect(40, 420, 101, 16))
-		self.label_8.setObjectName("label_8")
-		#   ô nhập tên cũ
-		self.edtoldname = QtWidgets.QTextEdit(self.centralwidget)
-		self.edtoldname.setGeometry(QtCore.QRect(210, 410, 111, 31))
-		self.edtoldname.setObjectName("edtoldname")
-		#ô nhập tên mới
-		self.edtnewname = QtWidgets.QTextEdit(self.centralwidget)
-		self.edtnewname.setGeometry(QtCore.QRect(390, 410, 121, 31))
-		self.edtnewname.setObjectName("edtnewname")
-		#label
-		self.label_9 = QtWidgets.QLabel(self.centralwidget)
-		self.label_9.setGeometry(QtCore.QRect(150, 420, 61, 16))
-		self.label_9.setObjectName("label_9")
-		self.label_10 = QtWidgets.QLabel(self.centralwidget)
-		self.label_10.setGeometry(QtCore.QRect(330, 420, 71, 16))
-		self.label_10.setObjectName("label_10")
-		#nút đổi tên
-		self.btnrename = QtWidgets.QPushButton(self.centralwidget)
-		self.btnrename.setGeometry(QtCore.QRect(520, 410, 75, 31))
-		self.btnrename.setObjectName("btnrename")
-		self.btnrename.clicked.connect(self.rename)
-		#nút xóa file
-		self.btndeletefile = QtWidgets.QPushButton(self.centralwidget)
-		self.btndeletefile.setGeometry(QtCore.QRect(520, 370, 75, 31))
+		self.btndeletefile = QtWidgets.QPushButton(self.groupBox_5)
+		self.btndeletefile.setGeometry(QtCore.QRect(180, 20, 61, 31))
 		self.btndeletefile.setObjectName("btndeletefile")
 		self.btndeletefile.clicked.connect(self.deletefile)
 
-		self.edtup_downfile = QtWidgets.QTextEdit(self.centralwidget)
-		self.edtup_downfile.setGeometry(QtCore.QRect(150, 450, 251, 31))
+		self.groupBox_6 = QtWidgets.QGroupBox(self.centralwidget)
+		self.groupBox_6.setGeometry(QtCore.QRect(320, 374, 251, 98))
+		self.groupBox_6.setObjectName("groupBox_6")
+		self.label_9 = QtWidgets.QLabel(self.groupBox_6)
+		self.label_9.setGeometry(QtCore.QRect(10, 26, 53, 16))
+		self.label_9.setObjectName("label_9")
+		self.edtoldname = QtWidgets.QTextEdit(self.groupBox_6)
+		self.edtoldname.setGeometry(QtCore.QRect(70, 20, 101, 31))
+		self.edtoldname.setObjectName("edtoldname")
+		self.btnrename = QtWidgets.QPushButton(self.groupBox_6)
+		self.btnrename.setGeometry(QtCore.QRect(180, 40, 61, 31))
+		self.btnrename.setObjectName("btnrename")
+		self.btnrename.clicked.connect(self.rename)
+		self.label_10 = QtWidgets.QLabel(self.groupBox_6)
+		self.label_10.setGeometry(QtCore.QRect(10, 68, 51, 16))
+		self.label_10.setObjectName("label_10")
+		self.edtnewname = QtWidgets.QTextEdit(self.groupBox_6)
+		self.edtnewname.setGeometry(QtCore.QRect(70, 60, 101, 31))
+		self.edtnewname.setObjectName("edtnewname")
+		
+		self.groupBox_7 = QtWidgets.QGroupBox(self.centralwidget)
+		self.groupBox_7.setGeometry(QtCore.QRect(40, 474, 531, 98))
+		self.groupBox_7.setObjectName("groupBox_7")
+		self.label_12 = QtWidgets.QLabel(self.groupBox_7)
+		self.label_12.setGeometry(QtCore.QRect(10, 26, 101, 16))
+		self.label_12.setObjectName("label_12")
+		self.edtup_downfile = QtWidgets.QTextEdit(self.groupBox_7)
+		self.edtup_downfile.setGeometry(QtCore.QRect(110, 20, 241, 31))
 		self.edtup_downfile.setObjectName("edtup_downfile")
-
-		self.btnupload = QtWidgets.QPushButton(self.centralwidget)
-		self.btnupload.setGeometry(QtCore.QRect(510, 450, 81, 31))
+		self.ChooseFile = QtWidgets.QPushButton(self.groupBox_7)
+		self.ChooseFile.setGeometry(QtCore.QRect(360, 20, 81, 31))
+		self.ChooseFile.setObjectName("ChooseFile")
+		self.ChooseFile.clicked.connect(self.defChoosefile)
+		self.btnupload = QtWidgets.QPushButton(self.groupBox_7)
+		self.btnupload.setGeometry(QtCore.QRect(450, 20, 81, 31))
 		self.btnupload.setObjectName("btnupload")
 		self.btnupload.clicked.connect(self.uploadfile)
-
-		self.btndownload = QtWidgets.QPushButton(self.centralwidget)
-		self.btndownload.setGeometry(QtCore.QRect(270, 500, 91, 31))
+		self.label_11 = QtWidgets.QLabel(self.groupBox_7)
+		self.label_11.setGeometry(QtCore.QRect(10, 66, 101, 16))
+		self.label_11.setObjectName("label_11")
+		self.edtnamefiledownload = QtWidgets.QTextEdit(self.groupBox_7)
+		self.edtnamefiledownload.setGeometry(QtCore.QRect(130, 60, 104, 31))
+		self.edtnamefiledownload.setObjectName("edtnamefiledownload")
+		self.btndownload = QtWidgets.QPushButton(self.groupBox_7)
+		self.btndownload.setGeometry(QtCore.QRect(250, 60, 91, 31))
 		self.btndownload.setObjectName("btndownload")
 		self.btndownload.clicked.connect(self.downloadfile)
 
-		self.btnquit = QtWidgets.QPushButton(self.centralwidget)
-		self.btnquit.setGeometry(QtCore.QRect(310, 290, 111, 31))
-		self.btnquit.setObjectName("ChooseFile")
-		self.btnquit.clicked.connect(self.defquit)
-
-		self.ChooseFile = QtWidgets.QPushButton(self.centralwidget)
-		self.ChooseFile.setGeometry(QtCore.QRect(410, 450, 91, 31))
-		self.ChooseFile.setObjectName("btnquit")
-		self.ChooseFile.clicked.connect(self.defChoosefile)
-		self.label_12 = QtWidgets.QLabel(self.centralwidget)
-		self.label_12.setGeometry(QtCore.QRect(40, 460, 101, 16))
-		self.label_12.setObjectName("label_12")
-		self.label_11 = QtWidgets.QLabel(self.centralwidget)
-		self.label_11.setGeometry(QtCore.QRect(40, 500, 101, 16))
-		self.label_11.setObjectName("label_11")
-		self.edtnamefiledownload = QtWidgets.QTextEdit(self.centralwidget)
-		self.edtnamefiledownload.setGeometry(QtCore.QRect(150, 500, 104, 31))
-		self.edtnamefiledownload.setObjectName("edtnamefiledownload")
+		self.listWidget = QtWidgets.QListWidget(self.centralwidget)
+		self.listWidget.setGeometry(QtCore.QRect(390, 180, 181, 111))
+		self.listWidget.setObjectName("listWidget")
+		self.listWidget.clicked.connect(self.clickeditem)
+		self.listWidget.itemDoubleClicked.connect(self.doubleclick)
 
 		MainWindow.setCentralWidget(self.centralwidget)
 		self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -195,34 +189,40 @@ class Ui_MainWindow(object):
 
 	def retranslateUi(self, MainWindow):
 		_translate = QtCore.QCoreApplication.translate
-		MainWindow.setWindowTitle(_translate("MainWindow", "Client FTP"))
-		self.btncreatefolder.setText(_translate("MainWindow", "Add"))
-		self.label.setText(_translate("MainWindow", "Create New Folder"))
-		self.btninfoserver.setText(_translate("MainWindow", "Connect Server"))
+		MainWindow.setWindowTitle(_translate("MainWindow", "FTP Client"))
+		self.groupBox.setTitle(_translate("MainWindow", "Main"))
+		self.btnquit.setText(_translate("MainWindow", "Quit"))
+		self.btnreturnfolder.setText(_translate("MainWindow", "Return"))
+		self.btninfoserver.setText(_translate("MainWindow", "Connect"))
+		self.groupBox_2.setTitle(_translate("MainWindow", "Information Connect"))
 		self.label_2.setText(_translate("MainWindow", "IP:"))
 		self.ip.setText("127.0.0.1")
+		self.label_3.setText(_translate("MainWindow", "Name: "))
 		self.name.setText("tbquang")
 		self.password.setText("12345")
-		self.label_3.setText(_translate("MainWindow", "Name: "))
 		self.label_4.setText(_translate("MainWindow", "Pass: "))
-		self.label_5.setText(_translate("MainWindow", "Move to Folder"))
+		self.groupBox_3.setTitle(_translate("MainWindow", "Display"))
+		self.groupBox_4.setTitle(_translate("MainWindow", "Folder "))
+		self.label.setText(_translate("MainWindow", "New Folder"))
+		self.btncreatefolder.setText(_translate("MainWindow", "Add"))
+		self.label_5.setText(_translate("MainWindow", "Move Folder"))
 		self.btnmovetofolder.setText(_translate("MainWindow", "Move"))
-		self.btninforfolder.setText(_translate("MainWindow", "Information Folder"))
-		self.btnreturnfolder.setText(_translate("MainWindow", "Return Folder"))
 		self.label_6.setText(_translate("MainWindow", "Del Folder"))
-		self.btndeletefolder.setText(_translate("MainWindow", "Delete Folder"))
+		self.btndeletefolder.setText(_translate("MainWindow", "Delete"))
+		self.groupBox_5.setTitle(_translate("MainWindow", "File"))
 		self.label_7.setText(_translate("MainWindow", "Del File"))
-		self.label_8.setText(_translate("MainWindow", "Rename Folder/File"))
-		self.label_9.setText(_translate("MainWindow", "Old Name: "))
-		self.label_10.setText(_translate("MainWindow", "New Name: "))
+		self.btndeletefile.setText(_translate("MainWindow", " Delete"))
+		self.groupBox_6.setTitle(_translate("MainWindow", "Rename Folder/File"))
+		self.label_9.setText(_translate("MainWindow", " Old Name"))
 		self.btnrename.setText(_translate("MainWindow", "Rename"))
-		self.btndeletefile.setText(_translate("MainWindow", " Delete File"))
-		self.btnupload.setText(_translate("MainWindow", "Upload"))
-		self.btndownload.setText(_translate("MainWindow", "Download"))
-		self.btnquit.setText(_translate("MainWindow", "Quit"))
-		self.ChooseFile.setText(_translate("MainWindow", "Choose File"))
+		self.label_10.setText(_translate("MainWindow", "New Name"))
+		self.groupBox_7.setTitle(_translate("MainWindow", "Upload/Dowload File"))
 		self.label_12.setText(_translate("MainWindow", "Choose  File UpLoad"))
+		self.ChooseFile.setText(_translate("MainWindow", "Choose File"))
+		self.btnupload.setText(_translate("MainWindow", "Upload"))
 		self.label_11.setText(_translate("MainWindow", "Name File Download"))
+		self.btndownload.setText(_translate("MainWindow", "Download"))
+
 
 
 	#Hàm lấy IP 
@@ -261,6 +261,9 @@ class Ui_MainWindow(object):
 				ftp_client.connect(ip,21)
 				ftp_client.login(user_name,password)
 				self.areadisplay.insertPlainText("Connected to Server: "+ftp_client.getwelcome()+"\n")
+				dem = 0
+				for name in ftp_client.nlst():
+					self.listWidget.insertItem(dem, name)
 			except:
 				msg = QtWidgets.QMessageBox()
 				msg.setIcon(QtWidgets.QMessageBox.Critical)
@@ -277,7 +280,10 @@ class Ui_MainWindow(object):
 	#Hàm xử lý nút lấy thông tin Folder
 	def inforfolder(self):
 		try:
-			self.areadisplay.insertPlainText("Infor: "+ftp_client.retrlines('LIST')+"\n")
+			self.areadisplay.insertPlainText("Infomation folder: "+ ftp_client.pwd() + "\n")
+			for name in ftp_client.nlst():
+				self.areadisplay.insertPlainText(name+"\n")
+			#self.areadisplay.insertPlainText("Infor: "+ftp_client.retrlines('LIST')+"\n")
 		except:
 			msg = QtWidgets.QMessageBox()
 			msg.setIcon(QtWidgets.QMessageBox.Critical)
@@ -307,6 +313,12 @@ class Ui_MainWindow(object):
 			try:
 				ftp_client.mkd(name_folder)
 				ftp_client.cwd(name_folder)
+				for i in range(self.listWidget.count()):
+					itemremove = self.listWidget.item(0)
+					self.listWidget.takeItem(self.listWidget.row(itemremove))
+				dem = 0
+				for name in ftp_client.nlst():
+					self.listWidget.insertItem(dem, name)
 				self.areadisplay.insertPlainText("Created Successfully. The current directory: "+ ftp_client.pwd()+"\n")
 				self.edtcreatefoldel.setText("")
 			except:
@@ -330,6 +342,12 @@ class Ui_MainWindow(object):
 		else:
 			try:
 				ftp_client.rmd(name_folder_delete)
+				for i in range(self.listWidget.count()):
+					itemremove = self.listWidget.item(0)
+					self.listWidget.takeItem(self.listWidget.row(itemremove))
+				dem = 0
+				for name in ftp_client.nlst():
+					self.listWidget.insertItem(dem, name)
 				self.areadisplay.insertPlainText("Deleted Successfully "+name_folder_delete+"\n")
 				self.edtdeletefolder.setText("")               
 			except:
@@ -353,6 +371,12 @@ class Ui_MainWindow(object):
 		else:
 			try:
 				ftp_client.delete(name_file_delete)
+				for i in range(self.listWidget.count()):
+					itemremove = self.listWidget.item(0)
+					self.listWidget.takeItem(self.listWidget.row(itemremove))
+				dem = 0
+				for name in ftp_client.nlst():
+					self.listWidget.insertItem(dem, name)
 				self.areadisplay.insertPlainText("Deleted Successfully "+name_file_delete+"\n")
 				self.edtdeletefile.setText("")
 				
@@ -408,6 +432,12 @@ class Ui_MainWindow(object):
 		else:
 			try:
 				ftp_client.rename(old_name,new_name)
+				for i in range(self.listWidget.count()):
+					itemremove = self.listWidget.item(0)
+					self.listWidget.takeItem(self.listWidget.row(itemremove))
+				dem = 0
+				for name in ftp_client.nlst():
+					self.listWidget.insertItem(dem, name)
 				self.areadisplay.insertPlainText("Changed successfully from "+old_name+ " to " +new_name+ "\n")
 				self.edtoldname.setText(""),
 				self.edtnewname.setText("")  
@@ -418,6 +448,10 @@ class Ui_MainWindow(object):
 				msg.setInformativeText("Oppp! Something was wrong! The file does not exist!")
 				msg.setWindowTitle("Error")
 				msg.exec_()
+
+	def doubleclick(self):
+		item = self.listWidget.currentItem()
+		self.edtmovetofolder.setText(item.text())
 
 	#Hàm xử lý nút chuyển đến folder
 	def movetofolder(self):
@@ -432,6 +466,12 @@ class Ui_MainWindow(object):
 		else:
 			try:
 				ftp_client.cwd(name_folder_move)
+				for i in range(self.listWidget.count()):
+					itemremove = self.listWidget.item(0)
+					self.listWidget.takeItem(self.listWidget.row(itemremove))
+				dem = 0
+				for name in ftp_client.nlst():
+					self.listWidget.insertItem(dem, name)
 				self.areadisplay.insertPlainText("Successfully moved to the directory. The current directory: "+ftp_client.pwd()+"\n")
 				self.edtmovetofolder.setText("")
 			except:
@@ -447,6 +487,12 @@ class Ui_MainWindow(object):
 	def returnfolder(self):
 		try:
 			ftp_client.cwd("..")
+			for i in range(self.listWidget.count()):
+					itemremove = self.listWidget.item(0)
+					self.listWidget.takeItem(self.listWidget.row(itemremove))
+			dem = 0
+			for name in ftp_client.nlst():
+				self.listWidget.insertItem(dem, name)
 			self.areadisplay.insertPlainText("Successfully moved to the directory. The current directory: "+ftp_client.pwd()+"\n")
 		except:
 			msg = QtWidgets.QMessageBox()
@@ -481,8 +527,17 @@ class Ui_MainWindow(object):
 			print(name_file_upload)
 			file_upload.close()
 			self.edtup_downfile.setText("")
+			for i in range(self.listWidget.count()):
+					itemremove = self.listWidget.item(0)
+					self.listWidget.takeItem(self.listWidget.row(itemremove))
+			dem = 0
+			for name in ftp_client.nlst():
+				self.listWidget.insertItem(dem, name)
 			self.areadisplay.insertPlainText("Uploaded Successfully file: "+name_file_upload+"\n")
 
+	def clickeditem(self):
+		item = self.listWidget.currentItem()
+		self.edtnamefiledownload.setText(item.text())
 	#Hàm xử lý nút downloadfile
 	#Muốn download file nào, thực hiện trỏ thư mục server chứa file đó
 	#Kết nối vào FTP server folder chứa thư mục và thực hiện download
